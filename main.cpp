@@ -13,17 +13,13 @@ int main() {
         return pow(x, 3) / 3 - 5 * x + x * log(x);
     };
 
-    HalfDivision halfDivision(1.5, 2.0, 0.02, function);
-    halfDivision.findMinimum();
+    HalfDivision::findMinimum(1.5, 2.0, 0.02, function);
 
-    GoldenRatio goldenRatio(1.5, 2.0, 0.02, function);
-    goldenRatio.findMinimum();
+    GoldenRatio::findMinimum(1.5, 2.0, 0.02, function);
 
-    Chords chords(1.5, 2.0, 0.02, function);
-    chords.findMinimum();
+    Chords::findMinimum(1.5, 2.0, 0.02, function);
 
-    Newton newton(1.5, 2.0, 0.02, function);
-    newton.findMinimum();
+    Newton::findMinimum(1.5, 2.0, 0.02, function);
 
     return 0;
 }

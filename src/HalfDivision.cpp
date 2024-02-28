@@ -1,14 +1,10 @@
 #include "../include/HalfDivision.h"
 #include <iostream>
 #include <functional>
-#include <cmath>
 
 using namespace std;
 
-HalfDivision::HalfDivision(double a, double b, double e, std::function<double(double)> function)
-        : a(a), b(b), e(e), function(std::move(function)) {}
-
-void HalfDivision::findMinimum() {
+void HalfDivision::findMinimum(double a, double b, double e, const std::function<double(double)> &function) {
     cout << "-----" << endl;
     cout << "Вычисление по методу половинного деления" << endl;
     cout << "-----" << endl;
@@ -40,7 +36,7 @@ void HalfDivision::findMinimum() {
         n++;
     }
 
-    cout << "b - a < 2e. Минимум с заданой погрешностью e = " << e << " лежит на этого середине отрезка" << endl;
+    cout << "b - a < 2e. Минимум с заданной погрешностью e = " << e << " лежит на середине этого отрезка" << endl;
     cout << "-----" << endl;
 
     double xm = (a + b) / 2;

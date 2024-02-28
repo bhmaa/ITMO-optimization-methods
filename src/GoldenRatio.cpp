@@ -5,10 +5,7 @@
 
 using namespace std;
 
-GoldenRatio::GoldenRatio(double a, double b, double e, std::function<double(double)> function)
-        : a(a), b(b), e(e), function(std::move(function)) {}
-
-void GoldenRatio::findMinimum() {
+void GoldenRatio::findMinimum(double a, double b, double e, const std::function<double(double)>& function) {
     cout << "-----" << endl;
     cout << "Вычисление по методу золотого сечения" << endl;
     cout << "-----" << endl;

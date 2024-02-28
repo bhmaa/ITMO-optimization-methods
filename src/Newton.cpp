@@ -5,12 +5,10 @@
 
 using namespace std;
 
-Newton::Newton(double a, double b, double e, std::function<double(double)> function)
-        : a(a), b(b), e(e), function(std::move(function)),
-          first_derivative(std::move(calculateDerivative(this->function))),
-          second_derivative(std::move(calculateDerivative(this->first_derivative))) {};
+void Newton::findMinimum(double a, double b, double e, const std::function<double(double)>& function) {
+    std::function<double(double)> first_derivative = calculateDerivative(function);
+    std::function<double(double)> second_derivative = calculateDerivative(first_derivative);
 
-void Newton::findMinimum() {
     cout << "-----" << endl;
     cout << "Вычисление по методу Ньютона" << endl;
     cout << "-----" << endl;

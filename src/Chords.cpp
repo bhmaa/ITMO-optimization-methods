@@ -6,10 +6,9 @@
 
 using namespace std;
 
-Chords::Chords(double a, double b, double e, std::function<double(double)> function)
-        : a(a), b(b), e(e), function(std::move(function)), derivative(std::move(calculateDerivative(this->function))) {}
+void Chords::findMinimum(double a, double b, double e, const std::function<double(double)>& function) {
+    std::function<double(double)> derivative = calculateDerivative(function);
 
-void Chords::findMinimum() {
     cout << "-----" << endl;
     cout << "Вычисление по методу хорд" << endl;
     cout << "-----" << endl;
