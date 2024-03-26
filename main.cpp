@@ -3,6 +3,7 @@
 #include "include/Chords.h"
 #include "include/Newton.h"
 #include "include/Derivative.h"
+#include "include/Powell.h"
 
 #include <cmath>
 
@@ -20,6 +21,8 @@ int main() {
     Chords::findMinimum(1.5, 2.0, 0.02, function);
 
     Newton::findMinimum(1.5, 2.0, 0.02, function);
+
+    Powell::findMinimum(1.5, 0.02, 0.0001, function);
 
     return 0;
 }
